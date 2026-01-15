@@ -1,0 +1,119 @@
+# jamaica-fintech-suite
+Public interface repository for Jamaica and Caribbean financial software. Defines integration boundaries, UI shells, and protocol interfaces for fintech, government services, and banking modernization. No internal logic, private runtimes, or executable intelligence included.
+jamaica-fintech-suite/
+├── README.md                       # Jamaica FinTech Suite
+
+Public interface repository for Jamaica and Caribbean financial software.
+
+This repository defines **interfaces, boundaries, and integration layers only**.
+No internal logic, memory systems, analytics, or decision engines are included.
+
+## Scope
+- PATH beneficiary tracking interfaces
+- Solana-based payout boundaries
+- MPC custody architecture stubs
+- Fraud and phishing detection hooks
+- Banking UI upgrade shells (JN Bank, Sagicor)
+
+## Exclusions
+- No executable intelligence
+- No private runtime logic
+- No memory or learning systems
+
+All intelligence exists in private runtimes.
+License: MIT
+
+├── frontend/
+│   ├── path-tracker/               }
+
+│   │   ├── app/
+│   │   │   ├── dashboard/
+│   │   │   │   └── page.js                     # export default function Dashboard() {
+  return (
+    <div>
+      <h1>PATH Beneficiary Dashboard</h1>
+      <p>Realtime progress, payments, and compliance tracking.</p>
+    </div>
+  );
+│   │   │   └── tx/
+│   │   │       └── page.tsx                   # export default function TxPermission() {
+  return (
+    <div>
+      <h1>Approve PATH Payout</h1>
+      <p>Transaction preview before wallet signing.</p>
+    </div>
+  );
+}
+│   │   └── package.json                     # {
+  "name": "path-tracker",
+  "private": true,
+  "version": "1.0.0"
+}
+│   └── bank-upgrades/
+│       ├── jnbank/
+│       │   └── README.md                    # JN Bank UI Upgrade
+Public interface shell for modern banking UX upgrades.
+│       ├── sagicor/
+│       │   └── README.md                    # Sagicor App Upgrade
+Public interface shell for insurance and financial dashboards.
+│       └── package.json                     # {
+  "name": "bank-upgrades",
+  "private": true,
+  "version": "1.0.0"
+}
+├── backend/
+│   ├── fastapi/
+│   │   ├── main.py                          # from fastapi import FastAPI
+app = FastAPI()
+@app.get("/")
+def status():
+    return {"status": "interface-only"}
+│   │   └── api/
+│   │       └── pay.py                       # def initiate_payment():
+    return {"message": "Payment boundary stub"}
+│   └── solana/
+│       └── programs/
+│           └── solona/
+│               └── src/
+│                   └── lib.rs               # use anchor_lang::prelude::*;
+declare_id!("SoLoNa111111111111111111111111111111111");
+#[program]
+pub mod solona {
+    use super::*;
+
+    pub fn payout(_ctx: Context<Payout>, _amount: u64) -> Result<()> {
+        Ok(())
+    }
+}
+#[derive(Accounts)]
+pub struct Payout {}
+├── mpc/
+│   ├── flow-docs.md                         # MPC Custody Flow
+This document defines multi-party computation custody boundaries.
+No private keys or signing logic are included.                        
+│   └── keyshares.md                          # Key Shares
+Defines conceptual separation of signing authority.
+Implementation exists in private infrastructure.
+├── docs/
+│   ├── integration.md                        # Integration Guide
+This repository exposes boundaries only.
+If internal logic is visible, integration is invalid.
+│   ├── dashboard-design.md                   # PATH Dashboard Design
+Metrics:
+- Approval status
+- Payment cycles
+- Compliance tracking
+│   └── solana-pay.md                         # Solana Pay Integration
+Defines QR, deep-link, and confirmation boundaries only.
+├── examples/
+│   └── minimal-path-demo/
+│       ├── index.ts                          # console.log("PATH interface demo");
+│       └── README.md                         # Minimal demonstration of interface compliance only.
+
+└── LICENSE                                   #MIT License
+
+Copyright (c) 2026 YaadFlex Global Vibes
+Author: Dwayne Ffolkes
+
+
+
